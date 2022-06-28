@@ -10,7 +10,7 @@
     "server": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
@@ -25,5 +25,8 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.20.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
   }
 }
