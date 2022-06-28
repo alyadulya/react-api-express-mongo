@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import DataTable from './DataTable';
 import './index.scss';
@@ -9,17 +9,17 @@ const Home = () => {
   const [query, setQuery] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
-  const getData = async () => {
-    const res = await axios(`http://localhost:3000/api/v2/product`);
+  const getData = useCallback(async () => {
+    const res = await axios(`http://localhost:3000/api/v2/product?name=${query}`);
     setData(res.data);
     setTimeout(() => {
       setLoading(false);
     }, 500);
-  }
+  }, [query]);
     
   useEffect(() => {
     getData()
-  }, [query])
+  }, [getData])
   
   const searchHandler = (e) => {
     var query = e.target.value.toLowerCase();

@@ -6,7 +6,8 @@ const path = require('path');
 const fs = require('fs');
 
 router.get('/product', (req, res) => {
-    Product.find()
+    const query = req.query.name || "";
+    Product.find({name: {$regex: `(?i).*${query}.*`}})
         .then(result => res.send(result))
         .catch(error => res.send(error));
 });
