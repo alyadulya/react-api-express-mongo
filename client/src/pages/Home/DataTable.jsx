@@ -15,7 +15,7 @@ const DataTable = ({ isLoading, data, getData, setLoading }) => {
         })
         .then(async (willDelete) => {
             if (willDelete) {
-                await axios.delete(`http://localhost:3000/api/v1/product/${id}`);
+                await axios.delete(`http://localhost:3000/api/v2/product/${id}`);
                 getData();
                 swal("Data telah dihapus!", {
                     icon: "success",

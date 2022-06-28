@@ -12,7 +12,7 @@ const Detail = ({ data }) => {
 
   useEffect(() => {
     const getDetail = async () => {
-      const res = await axios(`http://localhost:3000/api/v1/product/${id}`);
+      const res = await axios(`http://localhost:3000/api/v2/product/${id}`);
       setDetail(res.data);
       setTimeout(() => {
         setLoading(false);

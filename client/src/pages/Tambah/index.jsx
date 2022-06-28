@@ -14,7 +14,7 @@ const Tambah = () => {
 
   const addProduct = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:3000/api/v1/product', {
+    await axios.post('http://localhost:3000/api/v2/product', {
       name: name,
       price: parseInt(price),
       stock: parseInt(stock),

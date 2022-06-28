@@ -9,7 +9,7 @@ const MainEdit = ({ isLoading, name, price, stock, status, id, setName, setPrice
 
     const updateProduct = async (e) => {
         e.preventDefault();
-        await axios.put(`http://localhost:3000/api/v1/product/${id}`, {
+        await axios.put(`http://localhost:3000/api/v2/product/${id}`, {
             name: name,
             price: price,
             stock: stock,

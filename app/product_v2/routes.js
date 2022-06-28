@@ -27,6 +27,10 @@ router.post('/product', upload.single('image_url'), (req, res) => {
         Product.create({name, price, stock, status, image_url: `http://localhost:3000/public/${image_url.originalname}`})
             .then(result => res.send(result))
             .catch(error => res.send(error));
+    } else {
+        Product.create({name, price, stock, status})
+            .then(result => res.send(result))
+            .catch(error => res.send(error));
     }
 });
 

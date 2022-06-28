@@ -10,7 +10,7 @@ const Home = () => {
   const [isLoading, setLoading] = useState(true);
 
   const getData = async () => {
-    const res = await axios(`http://localhost:3000/api/v1/product?name=${query}`);
+    const res = await axios(`http://localhost:3000/api/v2/product`);
     setData(res.data);
     setTimeout(() => {
       setLoading(false);

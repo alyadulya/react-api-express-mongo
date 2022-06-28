@@ -13,7 +13,7 @@ const Edit = () => {
 
   useEffect(() => {
     const getDetail = async () => {
-      const res = await axios.get(`http://localhost:3000/api/v1/product/${id}`);
+      const res = await axios.get(`http://localhost:3000/api/v2/product/${id}`);
       setName(res.data.name);
       setPrice(parseInt(res.data.price));
       setStock(parseInt(res.data.stock));

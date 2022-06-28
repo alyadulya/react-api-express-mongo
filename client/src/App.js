@@ -11,7 +11,7 @@ const App = () => {
   const [data, setData] = useState([]);
 
   const getData = async () => {
-      await axios.get('http://localhost:3000/api/v1/product')
+      await axios.get('http://localhost:3000/api/v2/product')
         .then(res => setData(res.data))
         .catch((e) => console.log(e));
     }
